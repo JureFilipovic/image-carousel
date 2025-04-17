@@ -29,8 +29,17 @@ export default (function carousel() {
     showSlides((slideIndex = n));
   }
 
+  function autoSlides() {
+    setTimeout(() => {
+      slideIndex += 1;
+      showSlides(slideIndex);
+      autoSlides();
+    }, 5000);
+  }
+
   function init() {
     showSlides(slideIndex);
+    autoSlides();
   }
 
   return {
