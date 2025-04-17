@@ -18,4 +18,16 @@ export default defineConfig([
       "prettier/prettier": "error",
     },
   },
+  {
+    files: ["webpack.*.js"],
+    languageOptions: {
+      globals: globals.node,
+    },
+  },
+  {
+    files: ["dist/**/*"],
+    rules: {
+      "no-unused-vars": "off",
+    },
+  },
 ]);
